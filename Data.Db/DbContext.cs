@@ -19,8 +19,8 @@ namespace Data.Db
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                //optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Initial Catalog=SilverlineSupplier;Integrated Security=SSPI;");
-                optionsBuilder.UseSqlServer("Server=b2bpotential.cnb1fgovpd8k.ap-south-1.rds.amazonaws.com;Initial Catalog=SilverlineSupplier;Persist Security Info=True;User ID=admin;Password=STELLANS$sd*1;");
+                optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Initial Catalog=SilverlineSupplier;Integrated Security=SSPI;");
+                //optionsBuilder.UseSqlServer("Server=b2bpotential.cnb1fgovpd8k.ap-south-1.rds.amazonaws.com;Initial Catalog=SilverlineSupplier;Persist Security Info=True;User ID=admin;Password=STELLANS$sd*1;");
             }
         }
         public DbSet<CategoryMaster> CategoryMaster { get; set; }
