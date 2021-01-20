@@ -1,0 +1,152 @@
+﻿@{ ViewData["Title"] = "Home Page"; }
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div class="modal-dialog modal-register mt-5 pt-5" role="document">
+    <div class="modal-content form-elegant">
+
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-lg-8 mt-4 float-left custompr">
+
+                    <div class="card-body form p-3">
+                        <form class="needs-validation formsignin" novalidate method="post">
+                            <div class="container signinform" id="signin">
+                                <div class="card-body form p-0">
+                                    <div class="form-row">
+                                        <div class="col-md-12">
+                                            <span class="themeclrorange font-weight-bold float-left">SIGN <span class="customborder">IN</span></span>
+                                            <span class="float-right">or <a href="javascript:void(0)" class="font18 purpleclr up" id="up">Create New Account</a></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-12">
+                                            <div class="md-form">
+                                                <input type="text" id="form-contact-email" pattern="^([a-zA-Z0-9_\-\.]+)@@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" class="form-control" required name="username">
+                                                <label for="form-contact-email" class="">Your Email</label>
+
+                                                <div class="invalid-feedback">Enter Email</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="md-form">
+                                                <input type="password" id="password1" class="form-control" required name="SignInPassword">
+                                                <label for="password1">Password</label>
+                                                <div class="invalid-feedback">Enter Password</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row mt-3">
+                                        <div class="col-lg-12 text-right forgotpass">
+                                            <span class="font12"><a>Forget Password?</a></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-row mt-3">
+                                        <button type="button" id="signinbtn" class="signin btn btn-large custombtn text-white waves-effect waves-light w-100">CONTINUE</button>
+                                    </div>
+                                    @*<div class="mt-3">
+                                        <label class="text-danger alertmsg"></label>
+                                        </div>*@
+                                    <div class="mt-2 text-center">
+                                        <span class="font16">OR LOGIN WITH</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+
+                        <form class="formexternal" method="post" action="/login/externallogin/?redirect=@Microsoft.AspNetCore.Http.Extensions.UriHelper.GetDisplayUrl(Context.Request)">
+                            @Html.AntiForgeryToken();
+                            <div class="row mt-2">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-6 float-left">
+                                        <button type="submit" name="provider" value="Facebook" class="btn-text btn waves-effect bg-dark-blue text-white waves-light p-2 font14 w-100" data-provider="Facebook">
+                                            <img class="pr-2 align-bottom" src="https://todcdn.blob.core.windows.net/hotelimage/cdn/desktop/img/fb-logo.png" alt="Facebook logo" />Login with Facebook
+                                        </button>
+                                    </div>
+                                    <div class="col-lg-6 float-right">
+                                        <button type="submit" name="provider" value="Google" class="btn-text btn waves-effect waves-light p-2 font14 w-100" data-provider="Google">
+                                            <img class="pr-2" src="https://todcdn.blob.core.windows.net/hotelimage/cdn/desktop/img/google-logo.png" alt="Google logo" />Login with Google
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <form class="needs-validation formsignup" novalidate method="post">
+                            <div class="container signupform" id="signup" style="display: none">
+                                <div class="form-row">
+                                    <div class="col-md-12">
+                                        <span class="themeclrorange font-weight-bold float-left">SIGN <span class="customborder">UP</span></span>
+                                        <span class="float-right">Already a member? <a href="javascript:void(0)" id="in" class="font18 purpleclr in">Login</a></span>
+                                    </div>
+                                </div>
+                                <div class="form-row mt-2 p-2">
+
+                                    <div class="col-md-12 mt-2">
+                                        <div class="md-form">
+                                            <input type="text" id="form-contact-email1" class="form-control" pattern="^([a-zA-Z0-9_\-\.]+)@@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required name="email">
+                                            <label for="form-contact-email1" class="">Your Email</label>
+                                            <div class="invalid-feedback">Enter Email</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="md-form">
+                                            <input type="password" id="password" class="form-control" required name="password">
+                                            <label for="password" class="">Password</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <div class="custom-control custom-checkbox custom-control-inline">
+                                            <input type="checkbox" class="custom-control-input" id="defaultInline1">
+                                            <label for="defaultInline1" class="custom-control-label">
+                                                I understand and agree with the <a href="javascript:void(0)">Privacy Policy</a> and <a href="javascript:void(0)">Terms and Conditions</a> of Travelodeal.
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 mt-5">
+                                        <button type="button" class="signup btn btn-large custombtn text-white waves-effect waves-light w-100">CREATE ACCOUNT</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+
+                        <form class="needs-validation form-otp" novalidate style="display: none">
+                            <div class="container" id="otp">
+                                <div class="form-row">
+                                    <div class="col-md-12">
+                                        <span class="themeclrorange font-weight-bold float-left">Verify Email Id </span>
+                                        <span class="float-right"><a href="javascript:void(0)" class="font18 purpleclr back">Back</a></span>
+                                    </div>
+                                    <small>OTP has been sent to EMAIL</small>
+                                </div>
+                                <div class="form-row mt-2 p-2">
+                                    <div class="col-md-12 mt-2">
+                                        <div class="md-form">
+                                            <input type="text" id="otp" class="form-control" required name="otp">
+                                            <label for="otp" class="">OTP</label>
+                                            <div class="invalid-feedback">Enter OTP</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 mt-5">
+                                        <button type="button" class="otp btn btn-large custombtn text-white waves-effect waves-light w-100">Countinue</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                        <div class="mt-3 d-flex justify-content-center">
+                            <b class="text-danger alertmsg"></b>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+
+    </div>
+</div>

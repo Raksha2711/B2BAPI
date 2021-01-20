@@ -11,13 +11,10 @@ namespace Data.Entity
         public string Name { get; set; }
         public string Status { get; set; }
         public string Website { get; set; }
-
         public string TollFreeNo { get; set; }
         public int CreatedBy { get; set; }
         public int ModifiedBy { get; set; }
-
         public DateTime CreatedDate { get; set; }
         public DateTime ModifiedDate { get; set; }
-        
     }
 }

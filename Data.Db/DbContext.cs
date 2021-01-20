@@ -8,11 +8,9 @@ namespace Data.Db
     {
         public B2bDbContext(DbContextOptions<B2bDbContext> options) : base(options)
         {
-            
         }
         public B2bDbContext() : base()
         {
-
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
