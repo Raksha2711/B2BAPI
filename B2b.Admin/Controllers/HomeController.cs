@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Admin.BusinessService;
+using B2b.BusinessService;
 namespace B2b.Admin.Controllers
 {
     public class HomeController : Controller

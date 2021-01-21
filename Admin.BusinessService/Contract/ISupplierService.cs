@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Data.Entity;
-namespace Admin.BusinessService
+namespace B2b.BusinessService
 {
     public interface ISupplierService : IRepository<SupplierMaster>
     {

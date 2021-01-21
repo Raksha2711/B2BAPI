@@ -1,4 +1,5 @@
-﻿using Admin.BusinessService;
+﻿using B2b.BusinessService;
+using Core.ApiResponse;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ namespace B2b.Admin.Controllers
 {
 
     [Route("api/brands/[action]")]
-    public partial class BrandController : BaseController
+    public class BrandController : BaseController
     {
         IBrandService _service;
         public BrandController(IBrandService service)
@@ -23,6 +24,13 @@ namespace B2b.Admin.Controllers
         public IActionResult Update(int id)
         {
             return View();
+        }
+        public IActionResult List([FromQuery] int offset, [FromQuery] int take = 10)
+        {
+            var result = new ExecutionResult<dynamic>();
+            result.Value = _service.Get().Select(s => new { Id = s.Id, Name = s.Name }).Take(take).Skip(offset).ToList();
+            return FromExecutionResult(result);
+            //_service
         }
     }
 }

@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Admin.BusinessService;
+using B2b.BusinessService;
 
 namespace B2b.Admin.Controllers
 {
-    public partial class AreaController : BaseController
+    public class AreaController : BaseController
     {
         IAreaService _service;
         public AreaController(IAreaService service)

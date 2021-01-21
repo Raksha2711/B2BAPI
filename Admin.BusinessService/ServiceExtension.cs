@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Admin.BusinessService
+namespace B2b.BusinessService
 {
     public static class ServiceExtension
     {

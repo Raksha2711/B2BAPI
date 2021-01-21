@@ -1,6 +1,6 @@
 using System;
 
-namespace B2b.Api.Models
+namespace B2b.Admin.Models
 {
     public class ErrorViewModel
     {

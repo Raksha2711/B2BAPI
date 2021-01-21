@@ -10,7 +10,7 @@ using System.IO;
 using OfficeOpenXml;
 using Microsoft.Extensions.Configuration;
 
-namespace B2b.Api.Controllers
+namespace B2b.Admin.Controllers
 {
     public class BrandController : Controller
     {

@@ -5,7 +5,7 @@ using Data.Entity;
 using Data.Db;
 using System.Linq;
 
-namespace Admin.BusinessService
+namespace B2b.BusinessService
 {
     public class BrandService : Repository<BrandMaster>, IBrandService
     {

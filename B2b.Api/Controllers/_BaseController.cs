@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace B2b.Api.Controllers
+namespace B2b.Admin.Controllers
 {
     public class BaseController : Controller
     {

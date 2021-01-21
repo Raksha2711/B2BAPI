@@ -3,25 +3,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Admin.BusinessService;
+using B2b.BusinessService;
+using Core.ApiResponse;
 
 namespace B2b.Admin.Controllers
 {
     [Route("api/verticals/[action]")]
-    public partial class CategoryController : BaseController
+    public class CategoryController : BaseController
     {
         ICategoryService _service;
         public CategoryController(ICategoryService service)
         {
             _service = service;
         }
-        public IActionResult Index()
+        public IActionResult List([FromQuery] int offset, [FromQuery] int take = 10)
         {
-            return View();
-        }
-        public IActionResult Update(int id)
-        {
-            return View();
+            var result = new ExecutionResult<dynamic>();
+            result.Value = _service.Get().Select(s => new { Id = s.Id, Title = s.Name }).Take(take).Skip(offset).ToList();
+            return FromExecutionResult(result);
+            //_service
         }
     }
 }

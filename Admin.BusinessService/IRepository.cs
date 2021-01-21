@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace Admin.BusinessService
+namespace B2b.BusinessService
 {
     public interface IRepository<TEntity> where TEntity : class
     {

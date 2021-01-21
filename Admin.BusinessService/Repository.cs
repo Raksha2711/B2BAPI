@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Data.Db;
 using System.Collections.Generic;
 
-namespace Admin.BusinessService
+namespace B2b.BusinessService
 {
     public class Repository<TEntity> : IDisposable, IRepository<TEntity> where TEntity : class
     {
