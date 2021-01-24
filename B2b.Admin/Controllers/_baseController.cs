@@ -7,7 +7,7 @@ using System.Security.Claims;
 using Core.ApiResponse;
 using System.Text;
 
-namespace B2b.Admin.Controllers
+namespace B2b.Api.Controllers
 {
     public class BaseController : Controller
     {

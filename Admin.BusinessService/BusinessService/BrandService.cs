@@ -9,6 +9,9 @@ namespace B2b.BusinessService
 {
     public class BrandService : Repository<BrandMaster>, IBrandService
     {
-        
+        public BrandService(B2bDbContext dbContext) : base(dbContext)
+        {
+            
+        }
     }
 }

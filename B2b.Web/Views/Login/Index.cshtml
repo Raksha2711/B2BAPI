@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Login Page";
+    Layout = "";
+}
+
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1" />
+    <title>B2B Potential</title>
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="loginregister">
+    <div id="wrapper" class="loginpage">
+        <header id="site-header">
+            <div class="wrap-fuild header__wrap">
+                <div class="site-title">
+                    <a href="index.html" rel="home">
+                        <img src="images/logo.png" alt="">
+                    </a>
+                </div>
+                <ul class="menu__right">
+                    <li>Already have an account? <a href="javascript:void(0);">Sign Up</a></li>
+                </ul>
+            </div>
+        </header>
+        <main id="site-main">
+            <div class="login-wrap">
+                <h2>Login</h2>
+                <form action="#">
+                    <div class="form-group">
+                        <label class="form-label" for="username">Email address</label>
+                        <input type="text" class="form-control" name="username" placeholder="Enter email address">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="password">Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="Enter password">
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <input type="checkbox" name="" id="keepmelogged" checked>
+                            <label for="keepmelogged">Keep me logged in</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Login" class="btn btn--blue btn--full-width">
+                    </div>
+                    <div class="form-group or-block">
+                        or
+                    </div>
+                    <div class="form-group">
+                        <a class="btn btn--blue btn--full-width btn--google">Login with Google</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="js/vendors.bundle.js"></script>
+    <script src="js/scripts.bundle.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using B2b.BusinessService;
 using Microsoft.AspNetCore.Mvc;
 using Core.ApiResponse;
-namespace B2b.Admin.Controllers
+namespace B2b.Api.Controllers
 {
     [Route("api/service_centres/[action]")]
     public class ServiceController : BaseController

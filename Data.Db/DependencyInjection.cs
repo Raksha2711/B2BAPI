@@ -17,15 +17,8 @@ namespace Data.Db
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
                 //options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
             });
+
             return services;
-
-            //public static void ConfigureMySqlContext(this IServiceCollection services,
-            //                                         IConfiguration config)
-            //{
-            //    var connectionString = config["ConnectionStrings:DefaultConnection"];
-            //    services.AddDbContext<TodoContext>(o => o.UseSqlServer(connectionString));
-
-            //}
         }
     }
 }

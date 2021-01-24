@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using B2b.BusinessService;
 
-namespace B2b.Admin.Controllers
+namespace B2b.Api.Controllers
 {
     public class AreaController : BaseController
     {

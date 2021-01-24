@@ -11,20 +11,19 @@ namespace B2b.BusinessService
     public class Repository<TEntity> : IDisposable, IRepository<TEntity> where TEntity : class
     {
         internal readonly B2bDbContext _dbContext;
-        public Repository()
+        public Repository(string cn)
         {
-            // _dbContext = Query.Db.QueryDbContextFactory.GetInstance("QueryDbContext");
-            _dbContext = new B2bDbContext();
+            _dbContext = new B2bDbContext(cn);
         }
         //public Repository(string cn)
         //{
         //    //_dbContext = Query.Db.QueryDbContextFactory.GetInstance(cn);
         //    _dbContext = Query.Db.QueryDbContextFactory.GetInstance(cn);
         //}
-        //public Repository(B2bDbContext dbContext)
-        //{
-        //    this._dbContext = dbContext;
-        //}
+        public Repository(B2bDbContext dbContext)
+        {
+            this._dbContext = dbContext;
+        }
 
         public virtual IQueryable<TEntity> Get()
         {
@@ -67,7 +66,7 @@ namespace B2b.BusinessService
 
             _dbContext.SaveChanges();
             //TEntity existing = _dbContext.Set<TEntity>().Find(id);
-            
+
             return entity;
         }
 

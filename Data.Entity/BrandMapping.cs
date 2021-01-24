@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Data.Entity
 {
+    [Table("BrandMapping", Schema = "master")]
     public class BrandMapping
     {
         public int Id { get; set; }

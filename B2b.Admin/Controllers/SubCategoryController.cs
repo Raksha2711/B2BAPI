@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using B2b.BusinessService;
 using Core.ApiResponse;
 
-namespace B2b.Admin.Controllers
+namespace B2b.Api.Controllers
 {
 
     [Route("api/products/[action]")]

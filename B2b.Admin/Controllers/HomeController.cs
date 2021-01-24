@@ -1,4 +1,4 @@
-﻿using B2b.Admin.Models;
+﻿using B2b.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using B2b.BusinessService;
-namespace B2b.Admin.Controllers
+namespace B2b.Api.Controllers
 {
     public class HomeController : Controller
     {
