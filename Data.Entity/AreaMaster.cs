@@ -1,26 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace Data.Entity
 {
     [Table("Area", Schema = "master")]
-    public class AreaMaster
+    public partial class AreaMaster
     {
-        [Key]
         public int Id { get; set; }
-        //[DataType]
+        [MaxLength(50)]
         public string Name { get; set; }
-
-        public int Status { get; set; }
-
-        public int StateId { get; set; }
-
-        public int CreatedBy { get; set; }
-        public int ModifiedBy { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime ModifiedDate { get; set; }
+        [MaxLength(50)]
+        public string Remark { get; set; }
+        public int? StateId { get; set; }
+        public int? Status { get; set; }
+        public int? CreatedBy { get; set; }
+        public int? ModifiedBy { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? ModifiedDate { get; set; }
     }
 }
