@@ -22,7 +22,10 @@ namespace B2b.Web.Controllers
         {
             return View();
         }
-
+        public IActionResult Product()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

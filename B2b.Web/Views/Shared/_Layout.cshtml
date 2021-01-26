@@ -1,49 +1,108 @@
-﻿<!DOCTYPE html>
+﻿@inject ImageHelper Image
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - B2b.Web</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>@ViewData["Title"]</title>
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">B2b.Web View Layout</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+    <div id="wrapper">
+        <div class="topstrip">
+            <ul class="top-left">
+                <li>3rd Avneue, San Franciso</li>
+                <li>Monday - Fri : 8AM to 7PM</li>
+                <li>+91-00-00-00-00</li>
+            </ul>
+            <ul class="social-icons">
+                <li><a href="#"><img src="images/ico-facebook.svg" alt="facebook"></a></li>
+                <li><a href="#"><img src="images/ico-linkedin.svg" alt="linkedin"></a></li>
+                <li><a href="#"><img src="images/ico-instagram.svg" alt="instagram"></a></li>
+                <li><a href="#"><img src="images/ico-twitter.svg" alt="twitter"></a></li>
+            </ul>
+        </div>
+        <header id="site-header">
+            <div class="wrap-fuild header__wrap">
+                <div class="site-title">
+                    <a href="index.html" rel="home">
+                        <img src="images/logo.png" alt="">
+                    </a>
                 </div>
+                <nav class="header__menu">
+                    <ul>
+                        <li class="current"><a href="@Url.Action("Index","Home")">Home</a></li>
+                        <li><a href="@Url.Action("Product","Home")">Products</a></li>
+                        <li><a href="javascript:void(0);">Brands</a></li>
+                    </ul>
+                </nav>
+                <partial name="_LoginPartial" />
+                @*<ul class="menu__right">
+            <li class="search-ico"><a href="#"><img src="images/ico-search.svg" alt="search"></a></li>
+            <li><a class="btn btn--white" href="javascript:void(0);">Log In</a></li>
+            <li><a class="btn btn--blue btn--sm" href="javascript:void(0);">Sign Up - Free</a></li>
+        </ul>*@
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+        </header>
+        <main id="site-main">
             @RenderBody()
         </main>
+        <partial name="_Footer" />
+    </div>
+    <div id="modalid" class="modal-container">
+        <div class="modal gradient-bg ">
+            <a href="javascript:void(0)" id="close" data-close="true"></a>
+            <div class="modal-wrap text-center">
+                <h2 class="mb-80">You need to have an account to  view this content.</h2>
+                <h2 class="mb-50">Don’t have an account yet?</h2>
+                <form action="#">
+                    <div class="form-group mb-80">
+                        <input type="submit" value="Sign Up - It’s Free!" class="btn btn--blue btn--full-width">
+                    </div>
+                </form>
+
+                <h2 class="mb-40 mt-50">Have an account already?</h2>
+                <form action="#">
+                    <div class="form-group">
+                        <input type="submit" value="Login" class="btn new btn--full-width">
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - B2b.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <div id="modalshare" class="modal-container">
+        <img src="">
+        <div class="modal gradient-bg ">
+            <a href="javascript:void(0)" id="close" data-close="true"></a>
+            <div class="modal-wrap text-center">
+                <h2 class="mb-40">Logitech M235 Wireless Mouse</h2>
+                <h2 class="mb-30">John Doe Infosys</h2>
+                <ul class="modal-link text-center mb-30">
+                    <li>+91-00-00-000</li>
+                    <li>johndoe@gmail.com</li>
+                </ul>
+                <div class="text-center">
+                    <img src="~/images/creative.svg">
+                </div>
+                <h2 class="mb-40 mt-50">Share via</h2>
+                <ul class="social-icons">
+                    <li><a href="#"><img src="~/images/whatsapp-icn.svg" alt="whatsapp"></a></li>
+                    <li><a href="#"><img src="~/images/facebook-icn.svg" alt="facebook"></a></li>
+                    <li><a href="#"><img src="~/images/instagram-icn.svg" alt="instagram"></a></li>
+                    <li><a href="#"><img src="~/images/gmail-icn.svg" alt="gmail"></a></li>
+                    <li><a href="#"><img src="~/images/twitter-icn.svg" alt="twitter"></a></li>
+                </ul>
+            </div>
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    </div>
+
+    <script src="~/js/vendors.bundle.js"></script>
+    <script src="~/js/scripts.bundle.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

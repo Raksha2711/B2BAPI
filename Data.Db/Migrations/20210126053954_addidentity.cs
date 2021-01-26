@@ -8,11 +8,14 @@ namespace Data.Db.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.EnsureSchema(
-                name: "Auth");
+                name: "master");
+
+            migrationBuilder.EnsureSchema(
+                name: "auth");
 
             migrationBuilder.CreateTable(
-                name: "Roles",
-                schema: "Auth",
+                name: "AspNetRoles",
+                schema: "auth",
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
@@ -22,12 +25,12 @@ namespace Data.Db.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Roles", x => x.Id);
+                    table.PrimaryKey("PK_AspNetRoles", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users",
-                schema: "Auth",
+                name: "AspNetUsers",
+                schema: "auth",
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
@@ -48,12 +51,54 @@ namespace Data.Db.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_AspNetUsers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "RoleClaims",
-                schema: "Auth",
+                name: "Brand",
+                schema: "master",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(maxLength: 50, nullable: true),
+                    Status = table.Column<string>(maxLength: 50, nullable: true),
+                    Website = table.Column<string>(maxLength: 50, nullable: true),
+                    TollFreeNo = table.Column<decimal>(type: "numeric(11, 0)", nullable: true),
+                    CreatedBy = table.Column<int>(nullable: true),
+                    ModifiedBy = table.Column<int>(nullable: true),
+                    CreatedDate = table.Column<DateTime>(nullable: true),
+                    ModifiedDate = table.Column<DateTime>(nullable: true),
+                    Image = table.Column<string>(nullable: true),
+                    Remark = table.Column<string>(maxLength: 250, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Brand", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Category",
+                schema: "master",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(maxLength: 100, nullable: true),
+                    Status = table.Column<int>(nullable: true),
+                    CreatedBy = table.Column<int>(nullable: true),
+                    ModifiedBy = table.Column<int>(nullable: true),
+                    CreatedDate = table.Column<DateTime>(nullable: true),
+                    ModifiedDate = table.Column<DateTime>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Category", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetRoleClaims",
+                schema: "auth",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -64,19 +109,19 @@ namespace Data.Db.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RoleClaims", x => x.Id);
+                    table.PrimaryKey("PK_AspNetRoleClaims", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_RoleClaims_Roles_RoleId",
+                        name: "FK_AspNetRoleClaims_AspNetRoles_RoleId",
                         column: x => x.RoleId,
-                        principalSchema: "Auth",
-                        principalTable: "Roles",
+                        principalSchema: "auth",
+                        principalTable: "AspNetRoles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserClaims",
-                schema: "Auth",
+                name: "AspNetUserClaims",
+                schema: "auth",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -87,19 +132,19 @@ namespace Data.Db.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserClaims", x => x.Id);
+                    table.PrimaryKey("PK_AspNetUserClaims", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserClaims_Users_UserId",
+                        name: "FK_AspNetUserClaims_AspNetUsers_UserId",
                         column: x => x.UserId,
-                        principalSchema: "Auth",
-                        principalTable: "Users",
+                        principalSchema: "auth",
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserLogins",
-                schema: "Auth",
+                name: "AspNetUserLogins",
+                schema: "auth",
                 columns: table => new
                 {
                     LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
@@ -109,19 +154,19 @@ namespace Data.Db.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserLogins", x => new { x.LoginProvider, x.ProviderKey });
+                    table.PrimaryKey("PK_AspNetUserLogins", x => new { x.LoginProvider, x.ProviderKey });
                     table.ForeignKey(
-                        name: "FK_UserLogins_Users_UserId",
+                        name: "FK_AspNetUserLogins_AspNetUsers_UserId",
                         column: x => x.UserId,
-                        principalSchema: "Auth",
-                        principalTable: "Users",
+                        principalSchema: "auth",
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserRoles",
-                schema: "Auth",
+                name: "AspNetUserRoles",
+                schema: "auth",
                 columns: table => new
                 {
                     UserId = table.Column<string>(nullable: false),
@@ -129,26 +174,26 @@ namespace Data.Db.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserRoles", x => new { x.UserId, x.RoleId });
+                    table.PrimaryKey("PK_AspNetUserRoles", x => new { x.UserId, x.RoleId });
                     table.ForeignKey(
-                        name: "FK_UserRoles_Roles_RoleId",
+                        name: "FK_AspNetUserRoles_AspNetRoles_RoleId",
                         column: x => x.RoleId,
-                        principalSchema: "Auth",
-                        principalTable: "Roles",
+                        principalSchema: "auth",
+                        principalTable: "AspNetRoles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_UserRoles_Users_UserId",
+                        name: "FK_AspNetUserRoles_AspNetUsers_UserId",
                         column: x => x.UserId,
-                        principalSchema: "Auth",
-                        principalTable: "Users",
+                        principalSchema: "auth",
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserTokens",
-                schema: "Auth",
+                name: "AspNetUserTokens",
+                schema: "auth",
                 columns: table => new
                 {
                     UserId = table.Column<string>(nullable: false),
@@ -158,58 +203,58 @@ namespace Data.Db.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserTokens", x => new { x.UserId, x.LoginProvider, x.Name });
+                    table.PrimaryKey("PK_AspNetUserTokens", x => new { x.UserId, x.LoginProvider, x.Name });
                     table.ForeignKey(
-                        name: "FK_UserTokens_Users_UserId",
+                        name: "FK_AspNetUserTokens_AspNetUsers_UserId",
                         column: x => x.UserId,
-                        principalSchema: "Auth",
-                        principalTable: "Users",
+                        principalSchema: "auth",
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_RoleClaims_RoleId",
-                schema: "Auth",
-                table: "RoleClaims",
+                name: "IX_AspNetRoleClaims_RoleId",
+                schema: "auth",
+                table: "AspNetRoleClaims",
                 column: "RoleId");
 
             migrationBuilder.CreateIndex(
                 name: "RoleNameIndex",
-                schema: "Auth",
-                table: "Roles",
+                schema: "auth",
+                table: "AspNetRoles",
                 column: "NormalizedName",
                 unique: true,
                 filter: "[NormalizedName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserClaims_UserId",
-                schema: "Auth",
-                table: "UserClaims",
+                name: "IX_AspNetUserClaims_UserId",
+                schema: "auth",
+                table: "AspNetUserClaims",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserLogins_UserId",
-                schema: "Auth",
-                table: "UserLogins",
+                name: "IX_AspNetUserLogins_UserId",
+                schema: "auth",
+                table: "AspNetUserLogins",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserRoles_RoleId",
-                schema: "Auth",
-                table: "UserRoles",
+                name: "IX_AspNetUserRoles_RoleId",
+                schema: "auth",
+                table: "AspNetUserRoles",
                 column: "RoleId");
 
             migrationBuilder.CreateIndex(
                 name: "EmailIndex",
-                schema: "Auth",
-                table: "Users",
+                schema: "auth",
+                table: "AspNetUsers",
                 column: "NormalizedEmail");
 
             migrationBuilder.CreateIndex(
                 name: "UserNameIndex",
-                schema: "Auth",
-                table: "Users",
+                schema: "auth",
+                table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
@@ -218,32 +263,40 @@ namespace Data.Db.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "RoleClaims",
-                schema: "Auth");
+                name: "AspNetRoleClaims",
+                schema: "auth");
 
             migrationBuilder.DropTable(
-                name: "UserClaims",
-                schema: "Auth");
+                name: "AspNetUserClaims",
+                schema: "auth");
 
             migrationBuilder.DropTable(
-                name: "UserLogins",
-                schema: "Auth");
+                name: "AspNetUserLogins",
+                schema: "auth");
 
             migrationBuilder.DropTable(
-                name: "UserRoles",
-                schema: "Auth");
+                name: "AspNetUserRoles",
+                schema: "auth");
 
             migrationBuilder.DropTable(
-                name: "UserTokens",
-                schema: "Auth");
+                name: "AspNetUserTokens",
+                schema: "auth");
 
             migrationBuilder.DropTable(
-                name: "Roles",
-                schema: "Auth");
+                name: "Brand",
+                schema: "master");
 
             migrationBuilder.DropTable(
-                name: "Users",
-                schema: "Auth");
+                name: "Category",
+                schema: "master");
+
+            migrationBuilder.DropTable(
+                name: "AspNetRoles",
+                schema: "auth");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers",
+                schema: "auth");
         }
     }
 }

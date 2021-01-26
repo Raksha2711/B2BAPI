@@ -3,8 +3,83 @@
 @{
     ViewData["Title"] = "Register";
 }
+    <div id="wrapper" class="registerpage">
+        <header id="site-header">
+            <div class="wrap-fuild header__wrap">
+                <div class="site-title">
+                    <a href="@Url.Action("Index","Home")" rel="home">
+                        <img src="~/images/logo.png" alt="">
+                    </a>
+                </div>
+                <ul class="menu__right">
+                    <li>Already have an account? <a href="@Url.Action("Login","Account")">Sign In</a></li>
+                </ul>
+            </div>
+        </header>
+        <main id="site-main">
+            <div class="login-wrap">
+                <h2>Register With Us !</h2>
+                <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <div class="form-group">
+                        @*<label class="form-label" for="username">Your fullname*</label>*@
+                        <label class="form-label" asp-for="Input.Email"></label>
+                        @*<input type="text" class="form-control" name="username" placeholder="Enter fullname">*@
+                        <input asp-for="Input.Email" class="form-control" placeholder="Enter email address"/>
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        @*<label class="form-label" for="email">Email address*</label>*@
+                        <label class="form-label" asp-for="Input.Password"></label>
+                        @*<input type="text" class="form-control" name="email" placeholder="Enter email address">*@
+                        <input asp-for="Input.Password" class="form-control" placeholder="Enter password"/>
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group passwordDiv">
+                        @*<label class="form-label" for="password">Create password*</label>*@
+                        <label class="form-label" asp-for="Input.ConfirmPassword"></label>
+                        @*<input type="password" class="form-control" name="password" placeholder="Enter password">*@
+                        <input asp-for="Input.ConfirmPassword" class="form-control" placeholder="Enter confirm password"/>
+                        <span class="show_password">Show</span>
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="password">Sign Up As*</label>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="radiobox">
+                                    <input type="radio" name="signupas" id="signupas1" checked>
+                                    <label for="signupas1" class="ico-individual">Individual</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="radiobox">
+                                    <input type="radio" name="signupas" id="signupas2" checked>
+                                    <label for="signupas2" class="ico-business">Business</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <input type="checkbox" name="" id="tandc" checked>
+                            <label for="tandc">I agree to terms & conditions</label>
+                        </div>
+                    </div>
 
-<h1>@ViewData["Title"]</h1>
+                    <div class="form-group">
+                        <input type="submit" value="Register Account" class="btn btn--blue btn--full-width">
+                    </div>
+                    <div class="form-group or-block">
+                        or
+                    </div>
+                    <div class="form-group">
+                        <a class="btn btn--blue btn--full-width btn--google">Register with Google</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+@*<h1>@ViewData["Title"]</h1>
 
 <div class="row">
     <div class="col-md-4">
@@ -60,7 +135,7 @@
             }
         </section>
     </div>
-</div>
+</div>*@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
