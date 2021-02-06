@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Admin.BusinessService\B2b.BusinessService.csproj" />
     <ProjectReference Include="..\Data.Db\Data.Db.csproj" />
   </ItemGroup>
 

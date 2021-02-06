@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<Data.Entity.BrandMaster>
+@{
     ViewData["Title"] = "Home Page";
 }
 @await Component.InvokeAsync("jumbotron")
@@ -13,55 +14,58 @@
         </div>
         <div class="brands--inner">
             <div class="row row--items-center">
-                <div class="col-3">
-                    <img src="images/airbnb_logo.png" alt="">
+                @foreach (var item in Model)
+                {
+                    <div class="col-3">
+                        <img src=@item.Image alt="">
+                    </div>
+                }
+                    @*<div class="col-3">
+                        <img src="images/amazon_logo.png" alt="">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/fedex_logo.png" alt="">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/microsoft_logo.png" alt="">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/airbnb_logo.png" alt="">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/amazon_logo.png" alt="">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/fedex_logo.png" alt="">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/microsoft_logo.png" alt="">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/airbnb_logo.png" alt="">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/amazon_logo.png" alt="">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/fedex_logo.png" alt="">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/microsoft_logo.png" alt="">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/airbnb_logo.png" alt="">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/amazon_logo.png" alt="">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/fedex_logo.png" alt="">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/microsoft_logo.png" alt="">
+                    </div>*@
                 </div>
-                <div class="col-3">
-                    <img src="images/amazon_logo.png" alt="">
-                </div>
-                <div class="col-3">
-                    <img src="images/fedex_logo.png" alt="">
-                </div>
-                <div class="col-3">
-                    <img src="images/microsoft_logo.png" alt="">
-                </div>
-                <div class="col-3">
-                    <img src="images/airbnb_logo.png" alt="">
-                </div>
-                <div class="col-3">
-                    <img src="images/amazon_logo.png" alt="">
-                </div>
-                <div class="col-3">
-                    <img src="images/fedex_logo.png" alt="">
-                </div>
-                <div class="col-3">
-                    <img src="images/microsoft_logo.png" alt="">
-                </div>
-                <div class="col-3">
-                    <img src="images/airbnb_logo.png" alt="">
-                </div>
-                <div class="col-3">
-                    <img src="images/amazon_logo.png" alt="">
-                </div>
-                <div class="col-3">
-                    <img src="images/fedex_logo.png" alt="">
-                </div>
-                <div class="col-3">
-                    <img src="images/microsoft_logo.png" alt="">
-                </div>
-                <div class="col-3">
-                    <img src="images/airbnb_logo.png" alt="">
-                </div>
-                <div class="col-3">
-                    <img src="images/amazon_logo.png" alt="">
-                </div>
-                <div class="col-3">
-                    <img src="images/fedex_logo.png" alt="">
-                </div>
-                <div class="col-3">
-                    <img src="images/microsoft_logo.png" alt="">
-                </div>
-            </div>
             <div class="text-center">
                 <a class="btn btn--blue btn--lg" href="javascript:void(0);">See All Brands</a>
             </div>

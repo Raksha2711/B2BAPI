@@ -6,22 +6,34 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using B2b.Web.Models;
+using Data.Db;
 
 namespace B2b.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        //private readonly ILogger<HomeController> _logger;
+        public B2bDbContext _dbContext;
+        public HomeController(B2bDbContext dbContext)
         {
-            _logger = logger;
+            _dbContext = dbContext;
+            //  _configuration = configuration;
         }
-
         public IActionResult Index()
         {
-            return View();
+            var list = _dbContext.BrandMaster.Where(w => w.Status.Equals("1")).ToList();
+            return View(list);
         }
+        //public HomeController(ILogger<HomeController> logger)
+        //{
+        //    _logger = logger;
+        //}
+
+        //public IActionResult Index()
+        //{
+
+        //    return View();
+        //}
         public IActionResult Product()
         {
             return View();

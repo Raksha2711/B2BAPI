@@ -1,3 +1,5 @@
+using B2b.BusinessService;
+using Data.Db;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,8 +26,8 @@ namespace B2b.Admin
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            //services.AddInfrastructure(Configuration);
-            //services.ConfigureBusinessService();
+            services.AddInfrastructure(Configuration);
+            services.ConfigureBusinessService();
             //services.AddTransient<IBrandService, BrandService>();
         }
 

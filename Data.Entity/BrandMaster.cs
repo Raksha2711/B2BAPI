@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Data.Entity
 {
-    [Table("Brand", Schema = "master")]
+   // [Table("BrandMaster", Schema = "master")]
     public partial class BrandMaster
     {
         public int Id { get; set; }

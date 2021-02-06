@@ -150,6 +150,7 @@ namespace Data.Db
         //public virtual DbSet<AreaMaster> AreaMaster { get; set; }
         //public virtual DbSet<BrandMapping> BrandMapping { get; set; }
         public virtual DbSet<BrandMaster> BrandMaster { get; set; }
+
         public virtual DbSet<CategoryMaster> CategoryMaster { get; set; }
         //public virtual DbSet<DesignationMaster> DesignationMaster { get; set; }
         
