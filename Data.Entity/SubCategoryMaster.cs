@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Data.Entity
 {
-    [Table("SubCategory", Schema = "master")]
+    [Table("SubCategoryMaster", Schema = "dbo")]
     public partial class SubCategoryMaster
     {
         public int Id { get; set; }

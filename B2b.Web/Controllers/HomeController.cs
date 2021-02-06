@@ -17,23 +17,16 @@ namespace B2b.Web.Controllers
         public HomeController(B2bDbContext dbContext)
         {
             _dbContext = dbContext;
-            //  _configuration = configuration;
         }
         public IActionResult Index()
         {
-            var list = _dbContext.BrandMaster.Where(w => w.Status.Equals("1")).ToList();
-            return View(list);
+            var Brandlist = 
+                _dbContext.BrandMaster.Where(w => w.Status.Equals("1")).ToList();
+            var Categorylist = _dbContext.CategoryMaster.Where(w => w.Status.Equals(1)).ToList();
+            var Productlist = _dbContext.SubCategoryMaster.Where(w => w.Status.Equals(1)).ToList();
+            var model = new HomeViewModel { _brand = Brandlist, _category = Categorylist,_product=Productlist };
+            return View(model);
         }
-        //public HomeController(ILogger<HomeController> logger)
-        //{
-        //    _logger = logger;
-        //}
-
-        //public IActionResult Index()
-        //{
-
-        //    return View();
-        //}
         public IActionResult Product()
         {
             return View();

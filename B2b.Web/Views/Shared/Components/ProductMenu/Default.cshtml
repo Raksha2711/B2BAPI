@@ -1,17 +1,20 @@
-﻿@{
+﻿@model B2b.Web.Models.HomeViewModel
+@{
 }
 
-    <section class="section main-banner-below  pt-0 pb-0">
-        <div class="wrap">
-            <div class="product--brands">
-                <div class="row">
+<section class="section main-banner-below  pt-0 pb-0">
+    <div class="wrap">
+        <div class="product--brands">
+            <div class="row">
+                @foreach (var item in Model._category)
+                {
                     <div class="col-20">
                         <div class="ico_block text-center">
                             <img src="images/projector.png" alt="">
-                            <h3>Audio Video Solutions</h3>
+                            <h3>@item.Name</h3>
                         </div>
                     </div>
-                    <div class="col-20">
+                    @*<div class="col-20">
                         <div class="ico_block text-center">
                             <img src="images/cctv.png" alt="">
                             <h3>CCTV & Security</h3>
@@ -34,8 +37,9 @@
                             <img src="images/processor.png" alt="">
                             <h3>IT & Computer</h3>
                         </div>
-                    </div>
+                    </div>*@
+                }
                 </div>
-            </div>
         </div>
-    </section>
+    </div>
+</section>

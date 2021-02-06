@@ -1,4 +1,4 @@
-﻿@model List<Data.Entity.BrandMaster>
+﻿@model B2b.Web.Models.HomeViewModel
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -14,10 +14,11 @@
         </div>
         <div class="brands--inner">
             <div class="row row--items-center">
-                @foreach (var item in Model)
+                @foreach (var item in Model._brand)
                 {
+
                     <div class="col-3">
-                        <img src=@item.Image alt="">
+                        <img src="https://b2bpotential.s3.ap-south-1.amazonaws.com/BrandImages/@item.Image" alt="">
                     </div>
                 }
                     @*<div class="col-3">
@@ -80,61 +81,21 @@
             <p>We feature hundreds of some of your favourite brands</p>
         </div>
         <div class="row mb-40">
-            <div class="col-6">
-                <div class="product__card">
-                    <div class="product__img"><img src="images/product/product_01.png" alt=""></div>
-                    <div class="product__text">
-                        <h4>Product One</h4>
-                        <a class="btn btn--blue">Know more</a>
+            @foreach (var item in Model._product)
+            {
+                <div class="col-6">
+                    <div class="product__card">
+
+                        <div class="product__img"><img src="images/product/product_01.png" alt=""></div>
+                        <div class="product__text">
+                            <h4>@item.Name</h4>
+                            <a class="btn btn--blue">Know more</a>
+                        </div>
                     </div>
                 </div>
+            }
+           
             </div>
-            <div class="col-6">
-                <div class="product__card">
-                    <div class="product__img"><img src="images/product/product_01.png" alt=""></div>
-                    <div class="product__text">
-                        <h4>Product One</h4>
-                        <a class="btn btn--blue">Know more</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="product__card">
-                    <div class="product__img"><img src="images/product/product_01.png" alt=""></div>
-                    <div class="product__text">
-                        <h4>Product One</h4>
-                        <a class="btn btn--blue">Know more</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="product__card">
-                    <div class="product__img"><img src="images/product/product_01.png" alt=""></div>
-                    <div class="product__text">
-                        <h4>Product One</h4>
-                        <a class="btn btn--blue">Know more</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="product__card">
-                    <div class="product__img"><img src="images/product/product_01.png" alt=""></div>
-                    <div class="product__text">
-                        <h4>Product One</h4>
-                        <a class="btn btn--blue">Know more</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="product__card">
-                    <div class="product__img"><img src="images/product/product_01.png" alt=""></div>
-                    <div class="product__text">
-                        <h4>Product One</h4>
-                        <a class="btn btn--blue">Know more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="cta-btn text-center">
             <a class="btn btn--blue btn--lg" href="javascript:void(0);">See All Products</a>
         </div>
