@@ -1,0 +1,90 @@
+﻿@model List<Data.Entity.BrandMaster>
+@inject ImageHelper Image
+@{
+    ViewData["Title"] = "Brand";
+}
+
+<section class="section business-brands-banner">
+    <div class="wrap">
+        <div class="banner__content text-center">
+            <h2>Browse, search for retailers, dealers & service centres across brands and regions.</h2>
+        </div>
+    </div>
+</section>
+<section class="section filter__section pt-0">
+    <div class="wrap">
+        <div class="row">
+            <div class="col-4">
+                <div class="search">
+                    <input type="text" placeholder="Search for products here E.g.- Logitech">
+                    <div class="button-src">
+                        <a href="" class="btn btn--blue btn--sm">search</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="select-dropdown">
+                            <select id="Region" data-url="api/dropdown/Region" data-option="Region">
+                                <option value="Option 1">Region</option>
+                                <option value="Option 2">2nd Option</option>
+                                <option value="Option 3">Option Number 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="select-dropdown">
+                            <select id="Category" data-url="api/dropdown/categoty" data-option="Categoty">
+                                <option value="Option 1">Verticals</option>
+                                <option value="Option 2">2nd Option</option>
+                                <option value="Option 3">Option Number 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="select-dropdown">
+                            <select id="Brand" data-url="api/dropdown/brand" data-option="Brand">
+                                <option value="Option 1">Brands</option>
+                                <option value="Option 2">2nd Option</option>
+                                <option value="Option 3">Option Number 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="select-dropdown">
+                            <select>
+                                <option value="Option 1">Products</option>
+                                <option value="Option 2">2nd Option</option>
+                                <option value="Option 3">Option Number 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section product--busi--brands pt-0">
+    <div class="wrap">
+        <div class="product--busi-inner">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-3">
+                        <div class="product__busi__card">
+                            <div class="product__img mb-50"><img src="https://b2bpotential.s3.ap-south-1.amazonaws.com/BrandImages/@item.Image" alt="@item.Name"></div>
+                            <div class="product__text">
+                                <h4>@item.Name</h4>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <div class="text-center">
+                <a class="btn btn--blue btn--lg" href="javascript:void(0);">Load More Brands</a>
+            </div>
+        </div>
+    </div>
+</section>

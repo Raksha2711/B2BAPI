@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Common.Model\Common.Model.csproj" />
     <ProjectReference Include="..\Data.Db\Data.Db.csproj" />
     <ProjectReference Include="..\Data.Entity\Data.Entity.csproj" />
   </ItemGroup>

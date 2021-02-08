@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Data.Entity
 {
-    [Table("Area", Schema = "master")]
+    [Table("AreaMaster", Schema = "dbo")]
     public partial class AreaMaster
     {
         public int Id { get; set; }

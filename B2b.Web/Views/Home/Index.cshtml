@@ -14,61 +14,15 @@
         </div>
         <div class="brands--inner">
             <div class="row row--items-center">
-                @foreach (var item in Model._brand)
+                @foreach (var item in Model.Brands)
                 {
-
                     <div class="col-3">
-                        <img src="https://b2bpotential.s3.ap-south-1.amazonaws.com/BrandImages/@item.Image" alt="">
+                        <img src="https://b2bpotential.s3.ap-south-1.amazonaws.com/BrandImages/@item.value" alt="@item.key">
                     </div>
                 }
-                    @*<div class="col-3">
-                        <img src="images/amazon_logo.png" alt="">
-                    </div>
-                    <div class="col-3">
-                        <img src="images/fedex_logo.png" alt="">
-                    </div>
-                    <div class="col-3">
-                        <img src="images/microsoft_logo.png" alt="">
-                    </div>
-                    <div class="col-3">
-                        <img src="images/airbnb_logo.png" alt="">
-                    </div>
-                    <div class="col-3">
-                        <img src="images/amazon_logo.png" alt="">
-                    </div>
-                    <div class="col-3">
-                        <img src="images/fedex_logo.png" alt="">
-                    </div>
-                    <div class="col-3">
-                        <img src="images/microsoft_logo.png" alt="">
-                    </div>
-                    <div class="col-3">
-                        <img src="images/airbnb_logo.png" alt="">
-                    </div>
-                    <div class="col-3">
-                        <img src="images/amazon_logo.png" alt="">
-                    </div>
-                    <div class="col-3">
-                        <img src="images/fedex_logo.png" alt="">
-                    </div>
-                    <div class="col-3">
-                        <img src="images/microsoft_logo.png" alt="">
-                    </div>
-                    <div class="col-3">
-                        <img src="images/airbnb_logo.png" alt="">
-                    </div>
-                    <div class="col-3">
-                        <img src="images/amazon_logo.png" alt="">
-                    </div>
-                    <div class="col-3">
-                        <img src="images/fedex_logo.png" alt="">
-                    </div>
-                    <div class="col-3">
-                        <img src="images/microsoft_logo.png" alt="">
-                    </div>*@
-                </div>
+            </div>
             <div class="text-center">
-                <a class="btn btn--blue btn--lg" href="javascript:void(0);">See All Brands</a>
+                <a class="btn btn--blue btn--lg"  asp-controller="brand" asp-action="index">See All Brands</a>
             </div>
         </div>
     </div>
@@ -81,23 +35,23 @@
             <p>We feature hundreds of some of your favourite brands</p>
         </div>
         <div class="row mb-40">
-            @foreach (var item in Model._product)
+            @foreach (var item in Model.Products)
             {
                 <div class="col-6">
                     <div class="product__card">
 
-                        <div class="product__img"><img src="images/product/product_01.png" alt=""></div>
+                        <div class="product__img"><img src="https://b2bpotential.s3.ap-south-1.amazonaws.com/BrandImages/@item.value" alt=""></div>
                         <div class="product__text">
-                            <h4>@item.Name</h4>
+                            <h4>@item.key</h4>
                             <a class="btn btn--blue">Know more</a>
                         </div>
                     </div>
                 </div>
             }
-           
-            </div>
+
+        </div>
         <div class="cta-btn text-center">
-            <a class="btn btn--blue btn--lg" href="javascript:void(0);">See All Products</a>
+            <a class="btn btn--blue btn--lg" asp-controller="product" asp-action="index">See All Products</a>
         </div>
 
     </div>

@@ -1,0 +1,290 @@
+﻿@{
+    ViewData["Title"] = "Brand";
+}
+
+<section class="section business-brands-banner">
+    <div class="wrap">
+        <div class="banner__content text-center">
+            <h2>Browse, search for retailers, dealers & service centres across brands and regions.</h2>
+        </div>
+    </div>
+</section>
+<section class="section filter__section pt-0">
+    <div class="wrap">
+        <div class="row">
+            <div class="col-4">
+                <div class="search">
+                    <input type="text" placeholder="Search for products here E.g.- Logitech">
+                    <div class="button-src">
+                        <a href="" class="btn btn--blue btn--sm">search</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="select-dropdown">
+                            <select id="Region" data-url="api/dropdown/Region" data-option="Region">
+                                <option value="Option 1">Region</option>
+                                <option value="Option 2">2nd Option</option>
+                                <option value="Option 3">Option Number 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="select-dropdown">
+                            <select id="Category" data-url="api/dropdown/categoty" data-option="Categoty">
+                                <option value="Option 1">Verticals</option>
+                                <option value="Option 2">2nd Option</option>
+                                <option value="Option 3">Option Number 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="select-dropdown">
+                            <select id="Brand" data-url="api/dropdown/brand" data-option="Brand">
+                                <option value="Option 1">Brands</option>
+                                <option value="Option 2">2nd Option</option>
+                                <option value="Option 3">Option Number 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="select-dropdown">
+                            <select id="categoty" data-url="api/dropdown/brand" data-option="Brand">
+                                <option value="Option 1">Products</option>
+                                <option value="Option 2">2nd Option</option>
+                                <option value="Option 3">Option Number 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="tabset">
+
+        <!-- Tab 1 -->
+        <input type="radio" name="tabset" id="tab1" aria-controls="retailer" checked>
+        <label for="tab1">Retailer</label>
+        <!-- Tab 2 -->
+        <input type="radio" name="tabset" id="tab2" aria-controls="wholesaler">
+        <label for="tab2">Wholesaler</label>
+        <!-- Tab 3 -->
+        <input type="radio" name="tabset" id="tab3" aria-controls="service">
+        <label for="tab3">Service Center</label>
+
+        <div class="tab__panels">
+            <section id="retailer" class="tab__panel">
+                <table class="tabbedTable">
+                    <tbody>
+                        <tr>
+                            <th width="16%">SR. NO.</th>
+                            <th width="16%">BUSINESS NAME</th>
+                            <th width="16%">AUTHORIZED PERSONNEL</th>
+                            <th width="16%">ADDRESS</th>
+                            <th width="16%">BUSINESS NUMBER</th>
+                            <th width="16%">EMAIL ADDRESS</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>JOHN DOE INFOSYS</td>
+                            <td>MR. JOHN DOE</td>
+                            <td>
+                                SHOP NO. 14 & 15
+                                OPP SETU SQUARE NR. XYZ HOSPITAL MOTERA, AHMEDABAD 380005
+                            </td>
+                            <td>91-00-00-0000</td>
+                            <td>johndoe@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>JOHN DOE INFOSYS</td>
+                            <td>MR. JOHN DOE</td>
+                            <td>
+                                SHOP NO. 14 & 15
+                                OPP SETU SQUARE
+                                NR. XYZ HOSPITAL
+                                MOTERA, AHMEDABAD
+                                380005
+                            </td>
+                            <td>91-00-00-0000</td>
+                            <td>johndoe@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>JOHN DOE INFOSYS</td>
+                            <td>MR. JOHN DOE</td>
+                            <td>
+                                SHOP NO. 14 & 15
+                                OPP SETU SQUARE
+                                NR. XYZ HOSPITAL
+                                MOTERA, AHMEDABAD
+                                380005
+                            </td>
+                            <td>91-00-00-0000</td>
+                            <td>johndoe@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>JOHN DOE INFOSYS</td>
+                            <td>MR. JOHN DOE</td>
+                            <td>
+                                SHOP NO. 14 & 15
+                                OPP SETU SQUARE
+                                NR. XYZ HOSPITAL
+                                MOTERA, AHMEDABAD
+                                380005
+                            </td>
+                            <td>91-00-00-0000</td>
+                            <td>johndoe@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>JOHN DOE INFOSYS</td>
+                            <td>MR. JOHN DOE</td>
+                            <td>
+                                SHOP NO. 14 & 15
+                                OPP SETU SQUARE
+                                NR. XYZ HOSPITAL
+                                MOTERA, AHMEDABAD
+                                380005
+                            </td>
+                            <td>91-00-00-0000</td>
+                            <td>johndoe@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>JOHN DOE INFOSYS</td>
+                            <td>MR. JOHN DOE</td>
+                            <td>
+                                SHOP NO. 14 & 15
+                                OPP SETU SQUARE
+                                NR. XYZ HOSPITAL
+                                MOTERA, AHMEDABAD
+                                380005
+                            </td>
+                            <td>91-00-00-0000</td>
+                            <td>johndoe@gmail.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="wholesaler" class="tab__panel">
+                <table class="tabbedTable">
+                    <tbody>
+                        <tr>
+                            <th width="16%">SR. NO.</th>
+                            <th width="16%">BUSINESS NAME</th>
+                            <th width="16%">AUTHORIZED PERSONNEL</th>
+                            <th width="16%">ADDRESS</th>
+                            <th width="16%">BUSINESS NUMBER</th>
+                            <th width="16%">EMAIL ADDRESS</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>JOHN DOE INFOSYS</td>
+                            <td>MR. JOHN DOE</td>
+                            <td>
+                                SHOP NO. 14 & 15
+                                OPP SETU SQUARE
+                                NR. XYZ HOSPITAL
+                                MOTERA, AHMEDABAD
+                                380005
+                            </td>
+                            <td>91-00-00-0000</td>
+                            <td>johndoe@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>JOHN DOE INFOSYS</td>
+                            <td>MR. JOHN DOE</td>
+                            <td>
+                                SHOP NO. 14 & 15
+                                OPP SETU SQUARE
+                                NR. XYZ HOSPITAL
+                                MOTERA, AHMEDABAD
+                                380005
+                            </td>
+                            <td>91-00-00-0000</td>
+                            <td>johndoe@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>JOHN DOE INFOSYS</td>
+                            <td>MR. JOHN DOE</td>
+                            <td>
+                                SHOP NO. 14 & 15
+                                OPP SETU SQUARE
+                                NR. XYZ HOSPITAL
+                                MOTERA, AHMEDABAD
+                                380005
+                            </td>
+                            <td>91-00-00-0000</td>
+                            <td>johndoe@gmail.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="service" class="tab__panel">
+                <table class="tabbedTable">
+                    <tbody>
+                        <tr>
+                            <th width="16%">SR. NO.</th>
+                            <th width="16%">BUSINESS NAME</th>
+                            <th width="16%">AUTHORIZED PERSONNEL</th>
+                            <th width="16%">ADDRESS</th>
+                            <th width="16%">BUSINESS NUMBER</th>
+                            <th width="16%">EMAIL ADDRESS</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>JOHN DOE INFOSYS</td>
+                            <td>MR. JOHN DOE</td>
+                            <td>
+                                SHOP NO. 14 & 15
+                                OPP SETU SQUARE
+                                NR. XYZ HOSPITAL
+                                MOTERA, AHMEDABAD
+                                380005
+                            </td>
+                            <td>91-00-00-0000</td>
+                            <td>johndoe@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>JOHN DOE INFOSYS</td>
+                            <td>MR. JOHN DOE</td>
+                            <td>
+                                SHOP NO. 14 & 15
+                                OPP SETU SQUARE
+                                NR. XYZ HOSPITAL
+                                MOTERA, AHMEDABAD
+                                380005
+                            </td>
+                            <td>91-00-00-0000</td>
+                            <td>johndoe@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>JOHN DOE INFOSYS</td>
+                            <td>MR. JOHN DOE</td>
+                            <td>
+                                SHOP NO. 14 & 15
+                                OPP SETU SQUARE
+                                NR. XYZ HOSPITAL
+                                MOTERA, AHMEDABAD
+                                380005
+                            </td>
+                            <td>91-00-00-0000</td>
+                            <td>johndoe@gmail.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+</section>

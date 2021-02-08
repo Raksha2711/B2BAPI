@@ -147,8 +147,8 @@ namespace Data.Db
             modelBuilder.AddIdentityRules();
             base.OnModelCreating(modelBuilder);
         }
-        //public virtual DbSet<AreaMaster> AreaMaster { get; set; }
-        //public virtual DbSet<BrandMapping> BrandMapping { get; set; }
+        public virtual DbSet<AreaMaster> AreaMaster { get; set; }
+        public virtual DbSet<BrandMapping> BrandMapping { get; set; }
         public virtual DbSet<BrandMaster> BrandMaster { get; set; }
         public virtual DbSet<SubCategoryMaster> SubCategoryMaster { get; set; }
         public virtual DbSet<CategoryMaster> CategoryMaster { get; set; }

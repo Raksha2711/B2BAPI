@@ -17,7 +17,7 @@ namespace B2b.Web
         }
         public IHtmlContent Render(string path)
         {
-            var baseUrl = "";//_Config.Get("cdn:BaseUrl");
+            var baseUrl = "https://b2bpotential.s3.ap-south-1.amazonaws.com/";//_Config.Get("cdn:BaseUrl");
             baseUrl = string.IsNullOrWhiteSpace(baseUrl) ? "~/" : baseUrl;
             path = path.Replace("~/", baseUrl);
             return new HtmlString(AddVersion(path));

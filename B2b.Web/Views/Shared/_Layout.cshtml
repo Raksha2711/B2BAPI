@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="~/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <base href="/" />
 </head>
 <body>
     <div id="wrapper">
@@ -36,16 +37,16 @@
                 <nav class="header__menu">
                     <ul>
                         <li class="current"><a href="@Url.Action("Index","Home")">Home</a></li>
-                        <li><a href="@Url.Action("Product","Home")">Products</a></li>
-                        <li><a href="javascript:void(0);">Brands</a></li>
+                        <li><a href="@Url.Action("Index","Product")">Products</a></li>
+                        <li><a asp-controller="brand" asp-action="index">Brands</a></li>
                     </ul>
                 </nav>
                 <partial name="_LoginPartial" />
                 @*<ul class="menu__right">
-            <li class="search-ico"><a href="#"><img src="images/ico-search.svg" alt="search"></a></li>
-            <li><a class="btn btn--white" href="javascript:void(0);">Log In</a></li>
-            <li><a class="btn btn--blue btn--sm" href="javascript:void(0);">Sign Up - Free</a></li>
-        </ul>*@
+                        <li class="search-ico"><a href="#"><img src="images/ico-search.svg" alt="search"></a></li>
+                        <li><a class="btn btn--white" href="javascript:void(0);">Log In</a></li>
+                        <li><a class="btn btn--blue btn--sm" href="javascript:void(0);">Sign Up - Free</a></li>
+                    </ul>*@
             </div>
         </header>
         <main id="site-main">
@@ -103,6 +104,7 @@
 
     <script src="~/js/vendors.bundle.js"></script>
     <script src="~/js/scripts.bundle.js"></script>
+    <script src="~/appjs/b2b.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

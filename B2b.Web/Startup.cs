@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Data.Db;
 using Data.Entity;
+using B2b.BusinessService;
 
 namespace B2b.Web
 {
@@ -38,7 +39,7 @@ namespace B2b.Web
             //services.AddIdentity<B2bUser, IdentityRole>(options =>
              options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<B2bDbContext>();
-            
+            services.ConfigureBusinessService();
             AppConfiguration(services);
         }
 
